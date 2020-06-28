@@ -2,11 +2,8 @@ const Discord = require('discord.js')
 const bot = new Discord.Client()
 
 bot.on('ready', () => {
+    bot.user.setActivity('=help', { type: 'WATCHING'});
     console.log('The bot is now online');
-    });
-
-bot.on('ready', () => {
-    bot.user.setGame('=help')
     });
 
 bot.on('message', function (message) {
