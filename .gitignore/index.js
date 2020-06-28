@@ -5,6 +5,10 @@ bot.on('ready', () => {
     console.log('The bot is now online');
     });
 
+bot.on('ready', () => {
+    bot.user.setGame('=help')
+    });
+
 bot.on('message', function (message) {
     if (message.content === '=help') {
         message.channel.send({embed: {color: 5483232, title: 'Voici les commandes disponibles :', description: "=help : Voir toutes les commandes\n =radio-on : Allumer NG-Radio\n =radio-off : Éteindre NG-Radio"}})
