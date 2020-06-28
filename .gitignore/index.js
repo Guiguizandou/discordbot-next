@@ -6,8 +6,8 @@ bot.on('ready', () => {
     });
 
 bot.on('message', function (message) {
-    if (message.content === 'N!help') {
-        message.channel.send({embed: {color: 5483232, title: 'Voici les commandes disponibles :', description: "N!help : Voir toutes les commandes\n N!radio-on : Allumer NG-Radio\n N!radio-off : Éteindre NG-Radio"}})
+    if (message.content === '=help') {
+        message.channel.send({embed: {color: 5483232, title: 'Voici les commandes disponibles :', description: "=help : Voir toutes les commandes\n =radio-on : Allumer NG-Radio\n =radio-off : Éteindre NG-Radio"}})
     }
 })
 
@@ -16,7 +16,7 @@ bot.on('message', async message => {
   // we ignore it
   if (!message.guild) return;
 
-  if (message.content === 'N!radio-on') {
+  if (message.content === '=radio-on') {
     // Only try to join the sender's voice channel if they are in one themselves
     if (message.member.voice.channel) {
       const connection = await message.member.voice.channel.join();
@@ -31,7 +31,7 @@ bot.on('message', async message => {
 });
 
 bot.on('message', function (message) {
-    if (message.content === 'N!radio-off') {
+    if (message.content === '=radio-off') {
         message.member.voice.channel.leave();
         console.log('Radio Off');
     }
